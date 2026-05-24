@@ -52,7 +52,7 @@ pip install -r requirements.txt
 프로젝트 루트에 `.env` 파일을 생성하고 API 키를 입력합니다.
 
 ```bash
-cp .env.example .env
+cp env.example .env
 ```
 
 `.env` 파일을 열어 아래와 같이 수정합니다.
