@@ -1,6 +1,7 @@
 # AI Pose Changer
 
-인물 이미지를 업로드하고 스켈레톤 관절을 드래그해서 자세를 수정하면, AI가 새로운 포즈의 이미지를 생성해 주는 웹 애플리케이션입니다.
+인물 이미지를 업로드하고 스켈레톤 관절을 드래그해서 자세를 수정하면, AI가 새로운 포즈의 이미지를 생성해 주는 웹 애플리케이션입니다.  
+Cluade code 에 의해서 생성되었습니다. 
 
 ## 주요 기능
 
@@ -35,7 +36,7 @@
 ### 1. 저장소 클론
 
 ```bash
-git clone https://github.com/your-username/ai-pose-changer.git
+git clone https://github.com/wonwizard/AIPoseChanger.git
 cd ai-pose-changer
 ```
 
