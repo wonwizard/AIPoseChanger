@@ -1,0 +1,85 @@
+# AI Pose Changer
+
+[한국어 README](README-ko.md)
+
+Upload a person's photo, drag the skeleton joints to change their pose, and let AI generate a brand-new image in that pose.
+
+## Features
+
+- **Automatic Pose Detection** — Extracts 17 body keypoints from the uploaded image
+- **Interactive Skeleton Editor** — Drag joints on the canvas to adjust the pose freely
+- **Auto Prompt Extraction** — Gemini AI analyzes the image and suggests a generation prompt
+- **AI Image Generation** — Sends the original image + edited skeleton + text prompt to Gemini to generate a new pose image
+- **Download Result** — Save the generated image instantly
+
+## Result
+
+![AI Pose Changer result](result.png)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | HTML / CSS / Vanilla JS |
+| Backend | Python FastAPI |
+| Pose Detection | MediaPipe Pose Landmarker |
+| AI (prompt + image generation) | Google Gemini API (`gemini-3.1-flash-image-preview`) |
+
+---
+
+## Installation
+
+### Prerequisites
+
+- Python 3.10+
+- Google Gemini API key (get one at [Google AI Studio](https://aistudio.google.com/))
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/ai-pose-changer.git
+cd ai-pose-changer
+```
+
+### 2. Install dependencies
+
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+### 3. Set up environment variables
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` and fill in your API key:
+
+```
+GOOGLE_API_KEY=your_api_key_here
+```
+
+---
+
+## Running the App
+
+```bash
+cd backend
+uvicorn main:app --reload
+```
+
+Then open your browser at:
+
+```
+http://localhost:8000
+```
+
+### How to use
+
+1. **Upload Image** — Drag & drop or click to upload a photo of a person
+2. **Pose Editor** — Drag the skeleton joint points to the desired pose
+3. **Prompt** — Use the auto-generated prompt or edit it manually
+4. **Generate New Image** — Click the button, then view and download the result
+
+> **First run:** The MediaPipe pose landmarker model (~25 MB) is downloaded automatically.

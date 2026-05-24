@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Pose Changer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AI Pose Changer</h1>
+    <p class="subtitle">Modify your image's pose and regenerate it with AI.</p>
+  </header>
+
+  <main class="workspace">
+
+    <!-- Left panel -->
+    <section class="panel panel-left">
+
+      <div class="step">
+        <h2>1. Upload Image</h2>
+        <p class="step-desc">A pose and prompt will be automatically detected.</p>
+        <div id="dropzone" class="dropzone">
+          <span id="dropzone-text">Drag &amp; drop an image here, or click to select.</span>
+          <img id="dropzone-preview" alt="preview">
+          <input type="file" id="file-input" accept="image/*" hidden>
+        </div>
+        <p id="analyze-status" class="status-text"></p>
+      </div>
+
+      <div class="step">
+        <h2>2. Adjust Pose &amp; Add Prompt</h2>
+        <textarea id="prompt-textarea" placeholder="A descriptive prompt will appear here..."></textarea>
+      </div>
+
+      <div class="step">
+        <h2>3. Generate</h2>
+        <button id="generate-btn">Generate New Image</button>
+        <p id="generate-status" class="status-text"></p>
+      </div>
+
+    </section>
+
+    <!-- Center panel -->
+    <section class="panel panel-center">
+      <h2>Pose Editor</h2>
+      <p class="step-desc">Click and drag points to adjust the auto-detected pose.</p>
+      <div class="canvas-wrapper">
+        <canvas id="pose-canvas" width="512" height="512"></canvas>
+      </div>
+    </section>
+
+    <!-- Right panel -->
+    <section class="panel panel-right">
+      <h2>Result</h2>
+      <div class="result-area">
+        <img id="result-image" alt="Generated result">
+        <p id="result-placeholder" class="placeholder-text">Generated image will appear here.</p>
+      </div>
+      <button id="download-btn" class="hidden">Download</button>
+    </section>
+
+  </main>
+
+  <script src="skeleton_editor.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
